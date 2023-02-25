@@ -4,8 +4,25 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
-string[] myArray = new string[4] { "1234", "1567", "-2", "computer science" };
+string[] myArray = new string[4] { "Hello", "2", "world", ":-)" };
+string[] newArray = new string[myArray.Length];
+
+GetNewArray(myArray, newArray);
 PrintArray(myArray);
+PrintArray(newArray);
+
+void GetNewArray(string[] array1, string[] array2)
+{
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+        if (array1[i].Length <= 3)
+        {
+            array2[count] = array1[i];
+            count++;
+        }
+    }
+}
 
 void PrintArray(string[] array)
 {
